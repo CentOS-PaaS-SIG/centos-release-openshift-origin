@@ -19,7 +19,8 @@ CentOS PaaS SIG.
 %setup -q -n %{name} -T -c
 
 %install
-install -D -m 644 %SOURCE0 %{buildroot}%{_sysconfdir}/yum.repos.d/
+mkdir -p %{buildroot}%{_sysconfdir}/yum.repos.d/
+install -m 644 %SOURCE0 %{buildroot}%{_sysconfdir}/yum.repos.d/
 install -m 644 %SOURCE1 .
 
 %files
